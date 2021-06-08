@@ -5,7 +5,11 @@ class Api::V1::JournalsController < ApplicationController
   def index
     @journals = Journal.all
 
-    render json: @journals, include: :entries
+    render json: @journals, only: [:title, :id], include: {
+      entries: { 
+        except: [:created_at, :updated_at]
+       }
+    }
   end
 
   # GET /journals/1
