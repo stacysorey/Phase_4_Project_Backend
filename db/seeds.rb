@@ -25,55 +25,55 @@ journal_3 = Journal.create(title: "Journal 3")
 journal_1.entries.build(
   title: "Entry 1",
   description: "This is the description for entry 1!",
-  date: DateTime.now
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_1.entries.build(
   title: "Entry 2",
   description: "This is the description for entry 2!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_1.entries.build(
   title: "Entry 3",
   description: "This is the description for entry 3!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_2.entries.build(
   title: "Entry 1",
   description: "This is the description for entry 1!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_2.entries.build(
   title: "Entry 2",
   description: "This is the description for entry 2!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_2.entries.build(
   title: "Entry 3",
   description: "This is the description for entry 3!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_3.entries.build(
   title: "Entry 1",
   description: "This is the description for entry 1!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_3.entries.build(
   title: "Entry 2",
   description: "This is the description for entry 2!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_3.entries.build(
   title: "Entry 3",
   description: "This is the description for entry 3!",
-  date: Date.today
+  date: DateTime.now.strftime("%m.%d.%Y")
 )
 
 journal_1.save
