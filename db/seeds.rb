@@ -15,6 +15,8 @@
 #   t.datetime "updated_at", precision: 6, null: false
 #   t.index ["journal_id"], name: "index_entries_on_journal_id"
 # end
+Journal.destroy_all
+
 
 journal_1 = Journal.create(title: "Journal 1")
 journal_2 = Journal.create(title: "Journal 2")
