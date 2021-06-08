@@ -22,56 +22,56 @@ journal_3 = Journal.create(title: "Journal 3")
 
 journal_1.entries.build(
   title: "Entry 1",
-  desciption: "This is the description for entry 1!",
-  date: Date.now
+  description: "This is the description for entry 1!",
+  date: DateTime.now
 )
 
 journal_1.entries.build(
   title: "Entry 2",
-  desciption: "This is the description for entry 2!",
-  date: Date.now
+  description: "This is the description for entry 2!",
+  date: Date.today
 )
 
 journal_1.entries.build(
   title: "Entry 3",
-  desciption: "This is the description for entry 3!",
-  date: Date.now
+  description: "This is the description for entry 3!",
+  date: Date.today
 )
 
 journal_2.entries.build(
   title: "Entry 1",
-  desciption: "This is the description for entry 1!",
-  date: Date.now
+  description: "This is the description for entry 1!",
+  date: Date.today
 )
 
 journal_2.entries.build(
   title: "Entry 2",
-  desciption: "This is the description for entry 2!",
-  date: Date.now
+  description: "This is the description for entry 2!",
+  date: Date.today
 )
 
 journal_2.entries.build(
   title: "Entry 3",
-  desciption: "This is the description for entry 3!",
-  date: Date.now
+  description: "This is the description for entry 3!",
+  date: Date.today
 )
 
 journal_3.entries.build(
   title: "Entry 1",
-  desciption: "This is the description for entry 1!",
-  date: Date.now
+  description: "This is the description for entry 1!",
+  date: Date.today
 )
 
 journal_3.entries.build(
   title: "Entry 2",
-  desciption: "This is the description for entry 2!",
-  date: Date.now
+  description: "This is the description for entry 2!",
+  date: Date.today
 )
 
 journal_3.entries.build(
   title: "Entry 3",
-  desciption: "This is the description for entry 3!",
-  date: Date.now
+  description: "This is the description for entry 3!",
+  date: Date.today
 )
 
 journal_1.save
