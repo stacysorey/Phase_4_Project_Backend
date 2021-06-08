@@ -22,3 +22,18 @@ PLANNED PROJECT:
         ▶️ journal has many entries
     ▶️ js handling single page web application
     ▶️ js handle frontend localstorage login?
+
+USER FLOW: 
+
+▶️user loads page with header "cozy/simple journal"
+      ▶️contents of page hidden behind login 
+▶️when user is logged in, window is unhidden
+▶️window contains single journal 
+▶️user can add entries to this journal
+▶️entries have dates next to them 
+▶️when user clicks on entry, entry pops up in its own window
+      ▶️window in front of hidden page contents 
+      ▶️this entry can be exited out of
+      ▶️entries can be deleted and edited within popup
+      ▶️entry titles can be changed on main page 
+▶️logout button in corner 
