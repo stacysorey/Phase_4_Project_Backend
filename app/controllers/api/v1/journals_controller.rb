@@ -14,7 +14,11 @@ class Api::V1::JournalsController < ApplicationController
 
   # GET /journals/1
   def show
-    render json: @journal
+    render json: @journal, only: [:title, :id], include: {
+      entries: {
+        except: [:created_at, :updated_at]
+      }
+    }
   end
 
   # POST /journals
@@ -22,9 +26,17 @@ class Api::V1::JournalsController < ApplicationController
     @journal = Journal.new(journal_params)
 
     if @journal.save
-      render json: @journal, status: :created, location: @journal
+      render json: {
+        status: 201,
+        journal: @journal
+      },
+        status: :created, location: api_v1_journal_path(@journal)
     else
-      render json: @journal.errors, status: :unprocessable_entity
+      render json: {
+        status: 422,
+        errors: @journal.errors.full_messages.join(",")
+      ),
+        status: :unprocessable_entity
     end
   end
 
