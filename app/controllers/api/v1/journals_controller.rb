@@ -43,9 +43,16 @@ class Api::V1::JournalsController < ApplicationController
   # PATCH/PUT /journals/1
   def update
     if @journal.update(journal_params)
-      render json: @journal
+      render json: {
+        status: 204,
+        journal: @journal
+      }
     else
-      render json: @journal.errors, status: :unprocessable_entity
+      render json: {
+        status: 400, 
+        errors: @journal.errors.full_messages.join(",")
+      }, 
+        status: :unprocessable_entity
     end
   end
 
