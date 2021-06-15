@@ -51,7 +51,11 @@ class Api::V1::JournalsController < ApplicationController
 
   # DELETE /journals/1
   def destroy
-    @journal.destroy
+    if @journal.destroy
+      render json: {message: "Successfully deleted", journal: @journal}
+    else
+      render json: {message: "Failed to delete"}
+    end
   end
 
   private
