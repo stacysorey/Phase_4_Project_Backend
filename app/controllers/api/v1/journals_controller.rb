@@ -35,7 +35,7 @@ class Api::V1::JournalsController < ApplicationController
       render json: {
         status: 422,
         errors: @journal.errors.full_messages.join(",")
-      ),
+      },
         status: :unprocessable_entity
     end
   end
