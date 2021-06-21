@@ -1,5 +1,6 @@
 class Api::V1::EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :update, :destroy]
+  before_action :set_journal, only: [:show, :update, :destroy]
 
   # GET /entries
   def index
@@ -10,7 +11,6 @@ class Api::V1::EntriesController < ApplicationController
 
   # GET /entries/1
   def show
-    render json: @entry
   end
 
   # POST /entries
@@ -18,7 +18,7 @@ class Api::V1::EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
 
     if @entry.save
-      render json: @entry, status: :created, location: @entry
+      render json: @entry, status: :created, api_v1_journal_path(params[:journal_id], @entry)
     else
       render json: @entry.errors, status: :unprocessable_entity
     end
@@ -44,6 +44,9 @@ class Api::V1::EntriesController < ApplicationController
       @entry = Entry.find(params[:id])
     end
 
+    def set_journal
+      @journal = Journal.find(params[:journal_id])
+    end
     # Only allow a list of trusted parameters through.
     def entry_params
       params.require(:entry).permit(:title, :description, :date, :journal_id)
