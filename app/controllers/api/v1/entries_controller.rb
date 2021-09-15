@@ -15,10 +15,12 @@ class Api::V1::EntriesController < ApplicationController
 
   # POST /entries
   def create
+    
     @entry = Entry.new(entry_params)
-
+    
+    # @entry.journal_id = params[:entry[:journalID]]
     if @entry.save
-      render json: @entry, status: :created, api_v1_journal_path(params[:journal_id], @entry)
+      render json: @entry, status: :created
     else
       render json: @entry.errors, status: :unprocessable_entity
     end

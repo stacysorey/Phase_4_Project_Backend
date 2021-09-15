@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :journals do
-        resources :entries
-      end
+      resources :journals
+      resources :entries
     end
   end
 
